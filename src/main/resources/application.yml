@@ -1,2 +1,14 @@
 server:
   port: 7073
+  
+spring:
+  rabbitmq:
+    listener:
+      simple:
+        default-requeue-rejected: false
+        retry:
+          enabled: true
+          initial-interval: 10000
+          max-attempts: 3
+          multiplier: 1.5
+          max-interval: 10000
